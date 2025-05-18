@@ -6,7 +6,7 @@ const HorasLibres = () => {
   const [activeTab, setActiveTab] = useState('resumen');
   
   // Información del estudiante
-  const { nombre, horasLibres, eventosRegistrados } = estudiante;
+  const {horasLibres, eventosRegistrados } = estudiante;
   const horasRequeridas = 60; // Total de horas requeridas
   const horasFaltantes = Math.max(0, horasRequeridas - horasLibres);
   const porcentajeCompletado = Math.min(100, (horasLibres / horasRequeridas) * 100);
