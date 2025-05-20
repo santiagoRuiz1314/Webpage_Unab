@@ -3,7 +3,7 @@ import { estudiante } from '../data/estudiante';
 
 const ProfilePreview = () => {
   const { nombre, semestre, cursos, horasLibres } = estudiante;
-  const horasRequeridas = 60; // Suponiendo que se requieren 60 horas libres
+  const horasRequeridas = 48; // Suponiendo que se requieren 60 horas libres
   const horasFaltantes = Math.max(0, horasRequeridas - horasLibres);
   const porcentajeCompletado = Math.min(100, (horasLibres / horasRequeridas) * 100);
 

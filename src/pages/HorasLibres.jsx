@@ -121,7 +121,7 @@ const HorasLibres = () => {
   
   // Requisitos y normativas
   const requisitos = [
-    "Cada estudiante debe completar un mínimo de 60 horas libres para poder graduarse.",
+    "Cada estudiante debe completar un mínimo de 48 horas libres para poder graduarse.",
     "Las horas deben estar distribuidas en al menos dos categorías diferentes.",
     "La participación en eventos debe ser certificada por el organizador a través del portal.",
     "Las horas de voluntariado deben ser verificadas por el coordinador del programa de voluntariado.",
