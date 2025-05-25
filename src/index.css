@@ -296,3 +296,64 @@
     border-color: black !important;
   }
 }
+/* Estilos adicionales para el botón de contacto rápido */
+/* Agregar al final del archivo index.css */
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-contact {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Clase para animación de entrada desde abajo */
+.animate-in {
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+.slide-in-from-bottom-2 {
+  animation: slideInFromBottom 0.2s ease-out;
+}
+
+/* Mejoras para la animación de pulso del botón principal */
+.animate-pulse-contact {
+  animation: pulse-contact 2s infinite;
+}
+
+/* Asegurar que el botón esté siempre visible */
+.quick-contact-button {
+  z-index: 9999 !important;
+}
+
+/* Transiciones suaves para el modo oscuro */
+.quick-contact-button * {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .quick-contact-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .quick-contact-tooltip {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}

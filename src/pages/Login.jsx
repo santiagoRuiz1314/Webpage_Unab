@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ThemeToggleButton from '../components/ThemeToggleButton';
+import QuickContactButton from '../components/QuickContactButton';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -244,6 +245,9 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {/* Botón de contacto rápido para la página de login */}
+      <QuickContactButton />
     </div>
   );
 };
