@@ -9,6 +9,7 @@ import HorasLibres from "./pages/HorasLibres";
 import EventosDisponibles from "./pages/EventosDisponibles";
 import EventosRegistrados from "./pages/EventosRegistrados";
 import FormularioUsuario from "./pages/FormularioUsuario";
+import ConsejosEstudiantiles from "./pages/ConsejosEstudiantiles";
 import Login from "./pages/Login";
 
 function App() {
@@ -53,6 +54,13 @@ function App() {
               <ProtectedRoute>
                 <Layout>
                   <EventosRegistrados />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/consejos-estudiantiles" element={
+              <ProtectedRoute>
+                <Layout>
+                  <ConsejosEstudiantiles />
                 </Layout>
               </ProtectedRoute>
             } />

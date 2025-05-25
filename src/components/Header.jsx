@@ -51,6 +51,12 @@ const Header = () => {
               Horas Libres
             </Link>
             <Link 
+              to="/consejos-estudiantiles" 
+              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Consejos
+            </Link>
+            <Link 
               to="/perfil" 
               className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
@@ -123,6 +129,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Horas Libres
+              </Link>
+              <Link 
+                to="/consejos-estudiantiles" 
+                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Consejos
               </Link>
               <Link 
                 to="/perfil" 

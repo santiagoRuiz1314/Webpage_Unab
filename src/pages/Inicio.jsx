@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import ProfilePreview from '../components/ProfilePreview';
 import QuickLinks from '../components/QuickLinks';
 import EventsPreview from '../components/EventsPreview';
+import ConsejosPreview from '../components/ConsejosPreview';
 import Announcements from '../components/Announcements';
 import HorasLibresStats from '../components/HorasLibresStats';
 import WelcomeBanner from '../components/WelcomeBanner';
@@ -34,9 +35,14 @@ const Inicio = () => {
             <HorasLibresStats />
           </div>
           
-          {/* Events Preview Section */}
-          <div className="mb-8" id="eventos">
-            <EventsPreview />
+          {/* Events and Consejos Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div id="eventos">
+              <EventsPreview />
+            </div>
+            <div id="consejos">
+              <ConsejosPreview />
+            </div>
           </div>
           
           {/* Announcements Section */}
