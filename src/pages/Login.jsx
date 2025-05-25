@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import ThemeToggleButton from '../components/ThemeToggleButton';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -85,27 +86,32 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200">
       <div className="max-w-md w-full space-y-8">
+        {/* Botón de tema en la esquina superior derecha */}
+        <div className="flex justify-end">
+          <ThemeToggleButton />
+        </div>
+        
         {/* Header */}
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-            <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <div className="mx-auto h-16 w-16 rounded-full bg-green-100 dark:bg-green-800 flex items-center justify-center mb-4">
+            <svg className="h-8 w-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
             </svg>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900">Portal Estudiantil UNAB</h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Portal Estudiantil UNAB</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Ingresa con tus credenciales para continuar
           </p>
         </div>
 
         {/* Formulario de Login */}
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 transition-colors duration-200">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Error general */}
             {errors.general && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +119,7 @@ const Login = () => {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm text-red-700">{errors.general}</p>
+                    <p className="text-sm text-red-700 dark:text-red-400">{errors.general}</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +127,7 @@ const Login = () => {
 
             {/* Campo Usuario */}
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="username" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Usuario
               </label>
               <input
@@ -131,19 +137,21 @@ const Login = () => {
                 value={formData.username}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.username ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
-                } rounded-md shadow-sm focus:outline-none sm:text-sm`}
+                  errors.username 
+                    ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' 
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-green-500 focus:border-green-500'
+                } rounded-md shadow-sm focus:outline-none sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200`}
                 placeholder="Ingresa tu usuario"
                 disabled={isLoading}
               />
               {errors.username && (
-                <p className="mt-1 text-sm text-red-600">{errors.username}</p>
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.username}</p>
               )}
             </div>
 
             {/* Campo Contraseña */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Contraseña
               </label>
               <input
@@ -153,13 +161,15 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.password ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
-                } rounded-md shadow-sm focus:outline-none sm:text-sm`}
+                  errors.password 
+                    ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' 
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-green-500 focus:border-green-500'
+                } rounded-md shadow-sm focus:outline-none sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200`}
                 placeholder="Ingresa tu contraseña"
                 disabled={isLoading}
               />
               {errors.password && (
-                <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</p>
               )}
             </div>
 
@@ -170,8 +180,8 @@ const Login = () => {
                 disabled={isLoading}
                 className={`w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
                   isLoading 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500'
+                    ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed' 
+                    : 'bg-green-700 dark:bg-green-600 hover:bg-green-800 dark:hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:focus:ring-green-400'
                 } transition duration-300`}
               >
                 {isLoading ? (
@@ -190,7 +200,7 @@ const Login = () => {
           </form>
 
           {/* Información de prueba */}
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
             <div className="flex items-start">
               <div className="flex-shrink-0">
                 <svg className="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -198,8 +208,8 @@ const Login = () => {
                 </svg>
               </div>
               <div className="ml-3">
-                <h4 className="text-sm font-medium text-blue-800">Credenciales de prueba</h4>
-                <div className="mt-1 text-sm text-blue-700">
+                <h4 className="text-sm font-medium text-blue-800 dark:text-blue-400">Credenciales de prueba</h4>
+                <div className="mt-1 text-sm text-blue-700 dark:text-blue-300">
                   <p><strong>Usuario:</strong> admin</p>
                   <p><strong>Contraseña:</strong> 1234</p>
                 </div>
@@ -209,18 +219,18 @@ const Login = () => {
 
           {/* Enlaces adicionales */}
           <div className="mt-6 text-center space-y-2">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               ¿No tienes una cuenta?{' '}
               <button 
                 onClick={() => navigate('/crear-usuario')}
-                className="text-green-700 hover:text-green-600 font-medium"
+                className="text-green-700 dark:text-green-400 hover:text-green-600 dark:hover:text-green-300 font-medium"
                 disabled={isLoading}
               >
                 Regístrate aquí
               </button>
             </p>
-            <p className="text-sm text-gray-500">
-              <button className="text-gray-500 hover:text-gray-700" disabled={isLoading}>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              <button className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" disabled={isLoading}>
                 ¿Olvidaste tu contraseña?
               </button>
             </p>
@@ -229,7 +239,7 @@ const Login = () => {
 
         {/* Footer */}
         <div className="text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             © 2025 Universidad Autónoma de Bucaramanga (UNAB). Todos los derechos reservados.
           </p>
         </div>

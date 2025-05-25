@@ -2,26 +2,297 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Configuración base para modo oscuro */
+@layer base {
+  /* Asegurar que html y body respeten el esquema de color */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+  }
+  
+  /* Estilos base para body */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
 
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @apply bg-white dark:bg-gray-900;
+    transition: background-color 200ms ease-in-out;
+  }
 }
 
-/* Ensure the body covers the full viewport */
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Transiciones suaves globales para el cambio de tema */
+@layer components {
+  /* Transiciones para todos los elementos */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Optimización para elementos que no necesitan transición */
+  *:where(:not(html):not(body):not(#root)) {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 150ms;
+  }
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Personalización del scrollbar para ambos modos */
+@layer utilities {
+  /* Scrollbar para modo claro */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Scrollbar para modo oscuro */
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Mejoras para formularios en modo oscuro */
+  .dark input:not([type="checkbox"]):not([type="radio"]) {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+
+  .dark input:focus {
+    @apply ring-green-400 border-green-400;
+  }
+
+  .dark textarea {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+
+  .dark textarea:focus {
+    @apply ring-green-400 border-green-400;
+  }
+
+  .dark select {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+
+  .dark select:focus {
+    @apply ring-green-400 border-green-400;
+  }
+
+  /* Mejoras para botones en modo oscuro */
+  .dark button:not(.bg-green-700):not(.bg-green-600):not(.bg-red-600):not(.bg-red-700):not(.bg-blue-600):not(.bg-blue-700) {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+
+  .dark button:hover:not(.bg-green-700):not(.bg-green-600):not(.bg-red-600):not(.bg-red-700):not(.bg-blue-600):not(.bg-blue-700) {
+    @apply bg-gray-700;
+  }
+
+  /* Mejoras para enlaces en modo oscuro */
+  .dark a:not(.text-white):not(.text-green-700):not(.text-green-600):not(.text-red-700):not(.text-red-600):not(.text-blue-700):not(.text-blue-600) {
+    @apply text-gray-300;
+  }
+
+  .dark a:hover:not(.text-white):not(.text-green-700):not(.text-green-600):not(.text-red-700):not(.text-red-600):not(.text-blue-700):not(.text-blue-600) {
+    @apply text-gray-100;
+  }
+
+  /* Mejoras para tablas en modo oscuro */
+  .dark table {
+    @apply bg-gray-800;
+  }
+
+  .dark th {
+    @apply bg-gray-700 text-gray-200;
+  }
+
+  .dark td {
+    @apply text-gray-300;
+  }
+
+  .dark tr:hover {
+    @apply bg-gray-700;
+  }
+
+  /* Mejoras para cards/contenedores en modo oscuro */
+  .dark .bg-white {
+    @apply bg-gray-800;
+  }
+
+  .dark .bg-gray-50 {
+    @apply bg-gray-900;
+  }
+
+  .dark .bg-gray-100 {
+    @apply bg-gray-800;
+  }
+
+  .dark .border-gray-200 {
+    @apply border-gray-700;
+  }
+
+  .dark .border-gray-300 {
+    @apply border-gray-600;
+  }
+
+  /* Mejoras para texto en modo oscuro */
+  .dark .text-gray-800 {
+    @apply text-gray-100;
+  }
+
+  .dark .text-gray-700 {
+    @apply text-gray-200;
+  }
+
+  .dark .text-gray-600 {
+    @apply text-gray-300;
+  }
+
+  .dark .text-gray-500 {
+    @apply text-gray-400;
+  }
+
+  .dark .text-gray-900 {
+    @apply text-gray-100;
+  }
+
+  /* Mejoras para sombras en modo oscuro */
+  .dark .shadow-md {
+    @apply shadow-gray-900/20;
+  }
+
+  .dark .shadow-lg {
+    @apply shadow-gray-900/30;
+  }
+
+  .dark .shadow-xl {
+    @apply shadow-gray-900/40;
+  }
+}
+
+/* Utilidades específicas para componentes personalizados */
+@layer utilities {
+  /* Clase para contenedores principales */
+  .theme-container {
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+
+  /* Clase para texto principal */
+  .theme-text {
+    @apply text-gray-900 dark:text-gray-100;
+    transition: color 200ms ease-in-out;
+  }
+
+  /* Clase para texto secundario */
+  .theme-text-muted {
+    @apply text-gray-600 dark:text-gray-400;
+    transition: color 200ms ease-in-out;
+  }
+
+  /* Clase para bordes */
+  .theme-border {
+    @apply border-gray-200 dark:border-gray-700;
+    transition: border-color 200ms ease-in-out;
+  }
+
+  /* Clase para fondos de sección */
+  .theme-bg-section {
+    @apply bg-gray-50 dark:bg-gray-900;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  /* Clase para hover states */
+  .theme-hover {
+    @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  /* Clase para inputs y formularios */
+  .theme-input {
+    @apply bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100;
+    transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+
+  .theme-input:focus {
+    @apply ring-green-500 dark:ring-green-400 border-green-500 dark:border-green-400;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@layer base {
+  /* Asegurar contraste adecuado en modo oscuro */
+  .dark {
+    /* Override de colores específicos para mejor contraste */
+    --tw-prose-body: theme('colors.gray.300');
+    --tw-prose-headings: theme('colors.gray.100');
+    --tw-prose-lead: theme('colors.gray.400');
+    --tw-prose-links: theme('colors.green.400');
+    --tw-prose-bold: theme('colors.gray.100');
+    --tw-prose-counters: theme('colors.gray.400');
+    --tw-prose-bullets: theme('colors.gray.600');
+    --tw-prose-hr: theme('colors.gray.700');
+    --tw-prose-quotes: theme('colors.gray.100');
+    --tw-prose-quote-borders: theme('colors.gray.700');
+    --tw-prose-captions: theme('colors.gray.400');
+    --tw-prose-code: theme('colors.gray.100');
+    --tw-prose-pre-code: theme('colors.gray.300');
+    --tw-prose-pre-bg: theme('colors.gray.800');
+    --tw-prose-th-borders: theme('colors.gray.600');
+    --tw-prose-td-borders: theme('colors.gray.700');
+  }
+
+  /* Reducir movimiento para usuarios que lo prefieren */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Print styles */
+@media print {
+  .dark {
+    color-scheme: light;
+  }
+  
+  .dark * {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+  }
 }
