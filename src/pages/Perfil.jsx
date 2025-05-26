@@ -55,8 +55,8 @@ const Perfil = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Versión reducida para la página de perfil */}
-      <div className="bg-green-700 text-white py-10">
+      {/* Hero Section - Actualizado con el nuevo color */}
+      <div className="bg-[#3d3dea] text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-2">Mi Perfil</h1>
           <p className="opacity-90">
@@ -75,16 +75,16 @@ const Perfil = () => {
               {/* Foto y acciones rápidas */}
               <div className="md:w-1/4">
                 <div className="flex flex-col items-center">
-                  {/* Avatar/Foto */}
-                  <div className="h-32 w-32 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                    <span className="text-5xl font-bold text-green-700">{nombre.charAt(0)}</span>
+                  {/* Avatar/Foto - Actualizado al nuevo color */}
+                  <div className="h-32 w-32 rounded-full bg-[#3d3dea]/10 flex items-center justify-center mb-4">
+                    <span className="text-5xl font-bold text-[#3d3dea]">{nombre.charAt(0)}</span>
                   </div>
                   
                   <h2 className="text-xl font-bold text-gray-800 text-center mb-1">{nombre}</h2>
                   <p className="text-gray-600 mb-4 text-center">Semestre {semestre} • {informacionPersonal.programa}</p>
                   
                   <div className="w-full space-y-2">
-                    <Link to="/perfil/editar" className="w-full block text-center bg-green-700 hover:bg-green-800 text-white rounded-lg py-2 px-4 transition duration-300">
+                    <Link to="/perfil/editar" className="w-full block text-center bg-[#3d3dea] hover:bg-[#2d2dd4] text-white rounded-lg py-2 px-4 transition duration-300">
                       Editar Perfil
                     </Link>
                     <Link to="/cambiar-contrasena" className="w-full block text-center border border-gray-300 hover:bg-gray-100 text-gray-700 rounded-lg py-2 px-4 transition duration-300">
@@ -96,14 +96,14 @@ const Perfil = () => {
               
               {/* Información principal y tabs */}
               <div className="md:w-3/4">
-                {/* Tabs de navegación */}
+                {/* Tabs de navegación - Actualizados al nuevo color */}
                 <div className="border-b border-gray-200 mb-6">
                   <nav className="flex space-x-8">
                     <button
                       onClick={() => setActiveTab('general')} 
                       className={`py-4 px-1 border-b-2 font-medium text-sm ${
                         activeTab === 'general' 
-                          ? 'border-green-700 text-green-700' 
+                          ? 'border-[#3d3dea] text-[#3d3dea]' 
                           : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -113,7 +113,7 @@ const Perfil = () => {
                       onClick={() => setActiveTab('academica')}
                       className={`py-4 px-1 border-b-2 font-medium text-sm ${
                         activeTab === 'academica' 
-                          ? 'border-green-700 text-green-700' 
+                          ? 'border-[#3d3dea] text-[#3d3dea]' 
                           : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -123,7 +123,7 @@ const Perfil = () => {
                       onClick={() => setActiveTab('eventos')}
                       className={`py-4 px-1 border-b-2 font-medium text-sm ${
                         activeTab === 'eventos' 
-                          ? 'border-green-700 text-green-700' 
+                          ? 'border-[#3d3dea] text-[#3d3dea]' 
                           : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -176,7 +176,7 @@ const Perfil = () => {
                         <div>
                           <p className="text-sm text-gray-500">Estado</p>
                           <p className="font-medium">
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#3d3dea]/10 text-[#3d3dea]">
                               {informacionPersonal.estado}
                             </span>
                           </p>
@@ -205,9 +205,9 @@ const Perfil = () => {
                             <p className="text-sm text-gray-500">Promedio Acumulado</p>
                             <p className="text-3xl font-bold text-blue-700">{informacionAcademica.promedio.toFixed(1)}</p>
                           </div>
-                          <div className="bg-green-50 rounded-lg p-4">
+                          <div className="bg-[#3d3dea]/10 rounded-lg p-4">
                             <p className="text-sm text-gray-500">Créditos Aprobados</p>
-                            <p className="text-3xl font-bold text-green-700">
+                            <p className="text-3xl font-bold text-[#3d3dea]">
                               {informacionAcademica.creditos.aprobados}/{informacionAcademica.creditos.totales}
                             </p>
                           </div>
@@ -233,7 +233,7 @@ const Perfil = () => {
                                   </div>
                                   <Link 
                                     to={`/curso/${curso.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                                    className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                                   >
                                     Ver detalles
                                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -295,7 +295,7 @@ const Perfil = () => {
                                   <tr key={index} className="hover:bg-gray-50 transition">
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{curso.curso}</td>
                                     <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${
-                                      curso.nota >= 4.0 ? 'text-green-700' : curso.nota >= 3.0 ? 'text-yellow-700' : 'text-red-700'
+                                      curso.nota >= 4.0 ? 'text-[#3d3dea]' : curso.nota >= 3.0 ? 'text-yellow-700' : 'text-red-700'
                                     }`}>
                                       {curso.nota.toFixed(1)}
                                     </td>
@@ -329,21 +329,21 @@ const Perfil = () => {
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
                             <div 
-                              className="bg-green-600 h-2.5 rounded-full" 
+                              className="bg-[#3d3dea] h-2.5 rounded-full" 
                               style={{ width: `${Math.min(100, (horasLibres / 60) * 100)}%` }}
                             ></div>
                           </div>
                           
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                            <div className="bg-green-50 rounded-lg p-4 flex items-center">
-                              <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <div className="bg-[#3d3dea]/10 rounded-lg p-4 flex items-center">
+                              <div className="h-10 w-10 rounded-full bg-[#3d3dea]/20 flex items-center justify-center mr-3">
+                                <svg className="w-6 h-6 text-[#3d3dea]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                 </svg>
                               </div>
                               <div>
                                 <p className="text-sm text-gray-500">Horas Acumuladas</p>
-                                <p className="text-xl font-bold text-green-700">{horasLibres}</p>
+                                <p className="text-xl font-bold text-[#3d3dea]">{horasLibres}</p>
                               </div>
                             </div>
                             <div className="bg-blue-50 rounded-lg p-4 flex items-center">
@@ -373,7 +373,7 @@ const Perfil = () => {
                           <div className="flex justify-between">
                             <Link 
                               to="/horas-libres" 
-                              className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                              className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                             >
                               Ver detalles completos
                               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +382,7 @@ const Perfil = () => {
                             </Link>
                             <Link 
                               to="/eventos-disponibles" 
-                              className="bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded transition duration-300"
+                              className="bg-[#3d3dea] hover:bg-[#2d2dd4] text-white text-sm font-medium py-2 px-4 rounded transition duration-300"
                             >
                               Ver Eventos Disponibles
                             </Link>
@@ -396,7 +396,7 @@ const Perfil = () => {
                           <h3 className="text-lg font-semibold text-gray-800">Eventos Registrados</h3>
                           <Link 
                             to="/eventos-registrados"
-                            className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                            className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                           >
                             Ver todos
                             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -422,7 +422,7 @@ const Perfil = () => {
                                   <div className="flex justify-between items-center">
                                     <Link 
                                       to={`/eventos-registrados?id=${evento.id}`}
-                                      className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                                      className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                                     >
                                       Ver detalles
                                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -447,7 +447,7 @@ const Perfil = () => {
                             <p className="text-gray-600 mb-4">Actualmente no tienes eventos registrados. Explora los eventos disponibles y regístrate.</p>
                             <Link 
                               to="/eventos-disponibles" 
-                              className="inline-block bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                              className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
                             >
                               Ver Eventos Disponibles
                             </Link>
@@ -495,9 +495,9 @@ const Perfil = () => {
               
               <Link 
                 to="/horas-libres"
-                className="bg-yellow-100 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
+                className="bg-[#3d3dea]/10 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
               >
-                <svg className="w-8 h-8 text-yellow-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-8 h-8 text-[#3d3dea] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <h4 className="font-semibold text-center">Horas Libres</h4>
@@ -528,8 +528,8 @@ const Perfil = () => {
                     <span className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
                     <div className="relative flex items-start space-x-3">
                       <div className="relative">
-                        <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center ring-8 ring-white">
-                          <svg className="h-5 w-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div className="h-10 w-10 rounded-full bg-[#3d3dea]/10 flex items-center justify-center ring-8 ring-white">
+                          <svg className="h-5 w-5 text-[#3d3dea]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                           </svg>
                         </div>
@@ -570,8 +570,8 @@ const Perfil = () => {
                     <span className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
                     <div className="relative flex items-start space-x-3">
                       <div className="relative">
-                        <div className="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center ring-8 ring-white">
-                          <svg className="h-5 w-5 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div className="h-10 w-10 rounded-full bg-[#3d3dea]/10 flex items-center justify-center ring-8 ring-white">
+                          <svg className="h-5 w-5 text-[#3d3dea]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                           </svg>
                         </div>
@@ -590,8 +590,8 @@ const Perfil = () => {
                   <div className="relative pb-0">
                     <div className="relative flex items-start space-x-3">
                       <div className="relative">
-                        <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center ring-8 ring-white">
-                          <svg className="h-5 w-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div className="h-10 w-10 rounded-full bg-[#3d3dea]/10 flex items-center justify-center ring-8 ring-white">
+                          <svg className="h-5 w-5 text-[#3d3dea]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                           </svg>
                         </div>
@@ -609,7 +609,7 @@ const Perfil = () => {
             </div>
             
             <div className="mt-6 text-center">
-              <button className="text-green-700 hover:text-green-800 text-sm font-medium">
+              <button className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium">
                 Ver historial completo
               </button>
             </div>
