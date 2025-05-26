@@ -206,7 +206,7 @@ const EventosDisponibles = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Versión reducida para la página de eventos */}
-      <div className="bg-green-700 text-white py-10">
+      <div className="bg-[#3d3dea] text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-2">Eventos Disponibles</h1>
           <p className="opacity-90">
@@ -228,7 +228,7 @@ const EventosDisponibles = () => {
                   <input 
                     type="text" 
                     placeholder="Buscar por nombre o descripción..." 
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -241,7 +241,7 @@ const EventosDisponibles = () => {
               <div className="md:w-1/2 md:text-right">
                 <Link 
                   to="/eventos-registrados" 
-                  className="inline-block bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                  className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
                 >
                   Ver Mis Eventos Registrados
                 </Link>
@@ -253,7 +253,7 @@ const EventosDisponibles = () => {
                 <label htmlFor="categoria" className="block text-sm font-medium text-gray-700 mb-1">Categoría</label>
                 <select 
                   id="categoria" 
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={filters.categoria}
                   onChange={(e) => setFilters({...filters, categoria: e.target.value})}
                 >
@@ -269,7 +269,7 @@ const EventosDisponibles = () => {
                 <input 
                   type="date" 
                   id="fecha" 
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={filters.fecha}
                   onChange={(e) => setFilters({...filters, fecha: e.target.value})}
                 />
@@ -282,7 +282,7 @@ const EventosDisponibles = () => {
                   id="horasMin" 
                   min="0" 
                   placeholder="Min. horas"
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={filters.horasMin}
                   onChange={(e) => setFilters({...filters, horasMin: e.target.value})}
                 />
@@ -295,7 +295,7 @@ const EventosDisponibles = () => {
                   id="horasMax" 
                   min="0"
                   placeholder="Max. horas"
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={filters.horasMax}
                   onChange={(e) => setFilters({...filters, horasMax: e.target.value})}
                 />
@@ -311,7 +311,7 @@ const EventosDisponibles = () => {
                   onClick={() => setActiveTab('todos')} 
                   className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                     activeTab === 'todos' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -324,7 +324,7 @@ const EventosDisponibles = () => {
                     onClick={() => setActiveTab(categoria.toLowerCase())} 
                     className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                       activeTab === categoria.toLowerCase() 
-                        ? 'border-green-700 text-green-700' 
+                        ? 'border-[#3d3dea] text-[#3d3dea]' 
                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -344,7 +344,7 @@ const EventosDisponibles = () => {
                       <div key={evento.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                         <div className="h-48 bg-gray-200 relative overflow-hidden">
                           {/* Aquí iría la imagen real del evento */}
-                          <div className={`w-full h-full flex items-center justify-center ${evento.id % 3 === 0 ? 'bg-blue-100' : evento.id % 3 === 1 ? 'bg-green-100' : 'bg-purple-100'}`}>
+                          <div className={`w-full h-full flex items-center justify-center ${evento.id % 3 === 0 ? 'bg-blue-100' : evento.id % 3 === 1 ? 'bg-[#3d3dea]/10' : 'bg-purple-100'}`}>
                             <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                             </svg>
@@ -355,7 +355,7 @@ const EventosDisponibles = () => {
                             evento.categoria === 'Académico' ? 'bg-blue-100 text-blue-800' :
                             evento.categoria === 'Cultural' ? 'bg-purple-100 text-purple-800' :
                             evento.categoria === 'Deportivo' ? 'bg-red-100 text-red-800' :
-                            'bg-green-100 text-green-800'
+                            'bg-[#3d3dea]/10 text-[#3d3dea]'
                           }`}>
                             {evento.categoria}
                           </span>
@@ -364,7 +364,7 @@ const EventosDisponibles = () => {
                         <div className="p-4">
                           <div className="flex justify-between items-start">
                             <h3 className="font-semibold text-lg text-gray-800 mb-2">{evento.nombre}</h3>
-                            <span className="bg-green-100 text-green-800 text-xs font-medium py-1 px-2 rounded">
+                            <span className="bg-[#3d3dea]/10 text-[#3d3dea] text-xs font-medium py-1 px-2 rounded">
                               {evento.horas} horas
                             </span>
                           </div>
@@ -394,7 +394,7 @@ const EventosDisponibles = () => {
                                 setSelectedEvent(evento);
                                 setShowRegisterModal(false);
                               }}
-                              className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                              className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                             >
                               Más información
                               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -415,7 +415,7 @@ const EventosDisponibles = () => {
                                   setSelectedEvent(evento);
                                   setShowRegisterModal(true);
                                 }}
-                                className="text-white bg-green-700 hover:bg-green-800 text-sm font-medium py-1 px-3 rounded transition duration-300"
+                                className="text-white bg-[#3d3dea] hover:bg-[#2d2dd4] text-sm font-medium py-1 px-3 rounded transition duration-300"
                               >
                                 Inscribirme
                               </button>
@@ -447,7 +447,7 @@ const EventosDisponibles = () => {
                         });
                         setActiveTab('todos');
                       }}
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                     >
                       Limpiar filtros
                     </button>
@@ -466,7 +466,7 @@ const EventosDisponibles = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/solicitar-evento" 
-                className="inline-block text-center bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                className="inline-block text-center bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
               >
                 Solicitar aprobación de evento
               </Link>
@@ -552,7 +552,7 @@ const EventosDisponibles = () => {
                 <div className="md:col-span-2">
                   <div className="h-64 bg-gray-200 rounded-lg mb-4">
                     {/* Aquí iría la imagen real del evento */}
-                    <div className={`w-full h-full flex items-center justify-center rounded-lg ${selectedEvent.id % 3 === 0 ? 'bg-blue-100' : selectedEvent.id % 3 === 1 ? 'bg-green-100' : 'bg-purple-100'}`}>
+                    <div className={`w-full h-full flex items-center justify-center rounded-lg ${selectedEvent.id % 3 === 0 ? 'bg-blue-100' : selectedEvent.id % 3 === 1 ? 'bg-[#3d3dea]/10' : 'bg-purple-100'}`}>
                       <svg className="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                       </svg>
@@ -576,7 +576,7 @@ const EventosDisponibles = () => {
                     ) : (
                       <button 
                         onClick={() => setShowRegisterModal(true)}
-                        className="inline-block text-white bg-green-700 hover:bg-green-800 font-medium py-2 px-4 rounded transition duration-300"
+                        className="inline-block text-white bg-[#3d3dea] hover:bg-[#2d2dd4] font-medium py-2 px-4 rounded transition duration-300"
                       >
                         Inscribirme
                       </button>
@@ -595,7 +595,7 @@ const EventosDisponibles = () => {
                           selectedEvent.categoria === 'Académico' ? 'bg-blue-100 text-blue-800' :
                           selectedEvent.categoria === 'Cultural' ? 'bg-purple-100 text-purple-800' :
                           selectedEvent.categoria === 'Deportivo' ? 'bg-red-100 text-red-800' :
-                          'bg-green-100 text-green-800'
+                          'bg-[#3d3dea]/10 text-[#3d3dea]'
                         }`}>
                           {selectedEvent.categoria}
                         </span>
@@ -636,7 +636,7 @@ const EventosDisponibles = () => {
                   <div className="mt-6">
                     <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                       <div 
-                        className="bg-green-600 h-2.5 rounded-full" 
+                        className="bg-[#3d3dea] h-2.5 rounded-full" 
                         style={{ width: `${Math.round((selectedEvent.cuposDisponibles / selectedEvent.cupos) * 100)}%` }}
                       ></div>
                     </div>
@@ -709,7 +709,7 @@ const EventosDisponibles = () => {
                         id="terminos"
                         name="terminos"
                         type="checkbox"
-                        className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+                        className="h-4 w-4 text-[#3d3dea] focus:ring-[#3d3dea] border-gray-300 rounded mt-1"
                       />
                       <span className="ml-2 text-sm text-gray-600">
                         Acepto los términos y condiciones de participación en el evento y me comprometo a asistir. Entiendo que mi asistencia será verificada para la acreditación de horas libres.
@@ -725,7 +725,7 @@ const EventosDisponibles = () => {
                       id="comentarios"
                       name="comentarios"
                       rows="3"
-                      className="shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      className="shadow-sm focus:ring-[#3d3dea] focus:border-[#3d3dea] block w-full sm:text-sm border-gray-300 rounded-md"
                       placeholder="Indícanos si tienes alguna necesidad especial o comentario para los organizadores."
                     ></textarea>
                   </div>
@@ -735,13 +735,13 @@ const EventosDisponibles = () => {
               <div className="flex justify-end space-x-4">
                 <button 
                   onClick={() => setShowRegisterModal(false)}
-                  className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                 >
                   Cancelar
                 </button>
                 <button 
                   onClick={() => handleRegister(selectedEvent)}
-                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                 >
                   Confirmar Inscripción
                 </button>
