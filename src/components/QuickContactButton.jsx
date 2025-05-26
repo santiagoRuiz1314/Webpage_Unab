@@ -40,7 +40,7 @@ const QuickContactButton = () => {
         </svg>
       ),
       action: contactActions.phone,
-      color: 'text-green-600 hover:text-green-700'
+      color: 'text-primary-600 hover:text-primary-700'
     },
     {
       id: 'whatsapp',
@@ -147,7 +147,7 @@ const QuickContactButton = () => {
           className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 quick-contact-button ${
             isOpen 
               ? 'bg-red-600 hover:bg-red-700 rotate-45' 
-              : 'bg-green-600 hover:bg-green-700'
+              : 'bg-primary-600 hover:bg-primary-700'
           } text-white flex items-center justify-center group`}
           aria-label={isOpen ? 'Cerrar menú de contacto' : 'Abrir menú de contacto'}
         >
@@ -166,7 +166,7 @@ const QuickContactButton = () => {
 
         {/* Indicador de pulso cuando está cerrado */}
         {!isOpen && (
-          <div className="absolute inset-0 rounded-full bg-green-600 animate-pulse-contact opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 rounded-full bg-primary-600 animate-pulse-contact opacity-20 pointer-events-none" />
         )}
       </div>
     </>

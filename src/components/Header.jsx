@@ -14,18 +14,18 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-green-700 dark:bg-green-800 text-white shadow-lg transition-colors duration-200">
+    <header className="bg-primary-700 dark:bg-primary-800 text-white shadow-lg transition-colors duration-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo y nombre */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center mr-3">
-                <span className="text-green-700 dark:text-green-800 font-bold text-lg">U</span>
+                <span className="text-primary-700 dark:text-primary-800 font-bold text-lg">U</span>
               </div>
               <div>
                 <h1 className="text-xl font-bold">Portal Estudiantil</h1>
-                <p className="text-sm text-green-100 dark:text-green-200">UNAB</p>
+                <p className="text-sm text-primary-100 dark:text-primary-200">UNAB</p>
               </div>
             </Link>
           </div>
@@ -34,31 +34,31 @@ const Header = () => {
           <nav className="hidden md:flex space-x-6">
             <Link 
               to="/" 
-              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:text-primary-200 dark:hover:text-primary-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Inicio
             </Link>
             <Link 
               to="/eventos-disponibles" 
-              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:text-primary-200 dark:hover:text-primary-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Eventos
             </Link>
             <Link 
               to="/horas-libres" 
-              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:text-primary-200 dark:hover:text-primary-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Horas Libres
             </Link>
             <Link 
               to="/consejos-estudiantiles" 
-              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:text-primary-200 dark:hover:text-primary-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Consejos
             </Link>
             <Link 
               to="/perfil" 
-              className="hover:text-green-200 dark:hover:text-green-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
+              className="hover:text-primary-200 dark:hover:text-primary-300 transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Mi Perfil
             </Link>
@@ -68,7 +68,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="text-right">
               <p className="text-sm font-medium">Bienvenido,</p>
-              <p className="text-xs text-green-100 dark:text-green-200">{user?.username}</p>
+              <p className="text-xs text-primary-100 dark:text-primary-200">{user?.username}</p>
             </div>
             
             {/* Botón de alternancia de tema */}
@@ -76,7 +76,7 @@ const Header = () => {
             
             <button
               onClick={handleLogout}
-              className="bg-green-600 dark:bg-green-700 hover:bg-green-500 dark:hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
+              className="bg-primary-600 dark:bg-primary-700 hover:bg-primary-500 dark:hover:bg-primary-600 px-4 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
@@ -92,7 +92,7 @@ const Header = () => {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-green-200 dark:hover:text-green-300 focus:outline-none focus:text-green-200 dark:focus:text-green-300"
+              className="text-white hover:text-primary-200 dark:hover:text-primary-300 focus:outline-none focus:text-primary-200 dark:focus:text-primary-300"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 {isMenuOpen ? (
@@ -108,45 +108,45 @@ const Header = () => {
         {/* Menú móvil */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-green-600 dark:border-green-700">
+            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-primary-600 dark:border-primary-700">
               <Link 
                 to="/" 
-                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-primary-600 dark:hover:bg-primary-700 px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Inicio
               </Link>
               <Link 
                 to="/eventos-disponibles" 
-                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-primary-600 dark:hover:bg-primary-700 px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Eventos
               </Link>
               <Link 
                 to="/horas-libres" 
-                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-primary-600 dark:hover:bg-primary-700 px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Horas Libres
               </Link>
               <Link 
                 to="/consejos-estudiantiles" 
-                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-primary-600 dark:hover:bg-primary-700 px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Consejos
               </Link>
               <Link 
                 to="/perfil" 
-                className="block hover:bg-green-600 dark:hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-primary-600 dark:hover:bg-primary-700 px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Mi Perfil
               </Link>
-              <div className="border-t border-green-600 dark:border-green-700 pt-3 mt-3">
+              <div className="border-t border-primary-600 dark:border-primary-700 pt-3 mt-3">
                 <div className="px-3 py-2">
-                  <p className="text-sm text-green-100 dark:text-green-200">Conectado como:</p>
+                  <p className="text-sm text-primary-100 dark:text-primary-200">Conectado como:</p>
                   <p className="text-sm font-medium">{user?.username}</p>
                 </div>
                 <button
@@ -154,7 +154,7 @@ const Header = () => {
                     handleLogout();
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left bg-green-600 dark:bg-green-700 hover:bg-green-500 dark:hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
+                  className="w-full text-left bg-primary-600 dark:bg-primary-700 hover:bg-primary-500 dark:hover:bg-primary-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>

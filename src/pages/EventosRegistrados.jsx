@@ -87,7 +87,7 @@ const EventosRegistrados = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Versión reducida para la página de eventos registrados */}
-      <div className="bg-green-700 text-white py-10">
+      <div className="bg-[#3d3dea] text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-2">Mis Eventos Registrados</h1>
           <p className="opacity-90">
@@ -158,10 +158,10 @@ const EventosRegistrados = () => {
               </div>
               
               <div className="md:w-1/4 mt-6 md:mt-0">
-                <div className="bg-green-50 rounded-lg p-6 h-full">
+                <div className="bg-[#3d3dea] bg-opacity-10 rounded-lg p-6 h-full">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="h-24 w-24 rounded-full bg-green-100 flex items-center justify-center">
-                      <span className="text-3xl font-bold text-green-700">{estudiante.horasLibres}</span>
+                    <div className="h-24 w-24 rounded-full bg-[#3d3dea] bg-opacity-20 flex items-center justify-center">
+                      <span className="text-3xl font-bold text-[#3d3dea]">{estudiante.horasLibres}</span>
                     </div>
                   </div>
                   <div className="text-center">
@@ -169,7 +169,7 @@ const EventosRegistrados = () => {
                     <p className="text-sm text-gray-600 mb-3">De 60 horas requeridas</p>
                     <Link 
                       to="/eventos-disponibles"
-                      className="inline-block bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded transition duration-300 w-full"
+                      className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white text-sm font-medium py-2 px-4 rounded transition duration-300 w-full"
                     >
                       Inscribirme a Eventos
                     </Link>
@@ -188,7 +188,7 @@ const EventosRegistrados = () => {
                   <input 
                     type="text" 
                     placeholder="Buscar en mis eventos..." 
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -201,7 +201,7 @@ const EventosRegistrados = () => {
               <div className="md:w-1/2 md:text-right">
                 <Link 
                   to="/eventos-disponibles" 
-                  className="inline-block bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                  className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
                 >
                   Ver Eventos Disponibles
                 </Link>
@@ -217,7 +217,7 @@ const EventosRegistrados = () => {
                   onClick={() => setActiveTab('proximos')} 
                   className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                     activeTab === 'proximos' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -228,7 +228,7 @@ const EventosRegistrados = () => {
                   onClick={() => setActiveTab('completados')} 
                   className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                     activeTab === 'completados' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -239,7 +239,7 @@ const EventosRegistrados = () => {
                   onClick={() => setActiveTab('todos')} 
                   className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                     activeTab === 'todos' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -298,7 +298,7 @@ const EventosRegistrados = () => {
                               setSelectedEvent(evento);
                               setShowDetailsModal(true);
                             }}
-                            className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                            className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                           >
                             Ver detalles
                             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +322,7 @@ const EventosRegistrados = () => {
                             {evento.estado === 'Completado' && evento.certificado && (
                               <button 
                                 onClick={() => handleDownloadCertificate(evento)}
-                                className="text-white bg-green-700 hover:bg-green-800 text-sm font-medium py-1 px-3 rounded transition duration-300"
+                                className="text-white bg-[#3d3dea] hover:bg-[#2d2dd4] text-sm font-medium py-1 px-3 rounded transition duration-300"
                               >
                                 Certificado
                               </button>
@@ -349,7 +349,7 @@ const EventosRegistrados = () => {
                   <div className="mt-6">
                     <Link 
                       to="/eventos-disponibles"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                     >
                       Ver eventos disponibles
                     </Link>
@@ -381,8 +381,8 @@ const EventosRegistrados = () => {
             
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-700 font-semibold">1</span>
+                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-[#3d3dea] bg-opacity-20 flex items-center justify-center">
+                  <span className="text-[#3d3dea] font-semibold">1</span>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-md font-medium text-gray-800">Inscripción al Evento</h4>
@@ -391,8 +391,8 @@ const EventosRegistrados = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-700 font-semibold">2</span>
+                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-[#3d3dea] bg-opacity-20 flex items-center justify-center">
+                  <span className="text-[#3d3dea] font-semibold">2</span>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-md font-medium text-gray-800">Asistencia al Evento</h4>
@@ -401,8 +401,8 @@ const EventosRegistrados = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-700 font-semibold">3</span>
+                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-[#3d3dea] bg-opacity-20 flex items-center justify-center">
+                  <span className="text-[#3d3dea] font-semibold">3</span>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-md font-medium text-gray-800">Verificación</h4>
@@ -411,8 +411,8 @@ const EventosRegistrados = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-700 font-semibold">4</span>
+                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-[#3d3dea] bg-opacity-20 flex items-center justify-center">
+                  <span className="text-[#3d3dea] font-semibold">4</span>
                 </div>
                 <div className="ml-4">
                   <h4 className="text-md font-medium text-gray-800">Certificación</h4>
@@ -562,7 +562,7 @@ const EventosRegistrados = () => {
                     {selectedEvent.estado === 'Completado' && selectedEvent.certificado && (
                       <button 
                         onClick={() => handleDownloadCertificate(selectedEvent)}
-                        className="inline-block text-white bg-green-700 hover:bg-green-800 font-medium py-2 px-4 rounded transition duration-300"
+                        className="inline-block text-white bg-[#3d3dea] hover:bg-[#2d2dd4] font-medium py-2 px-4 rounded transition duration-300"
                       >
                         Descargar Certificado
                       </button>
@@ -628,19 +628,19 @@ const EventosRegistrados = () => {
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">Instrucciones:</h4>
                       <ul className="space-y-2 text-sm text-gray-600">
                         <li className="flex items-start">
-                          <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="h-5 w-5 text-[#3d3dea] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
                           <span>Llega 15 minutos antes para registrar tu entrada.</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="h-5 w-5 text-[#3d3dea] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
                           <span>Lleva tu carné estudiantil para la verificación.</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="h-5 w-5 text-[#3d3dea] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
                           <span>Registra tu salida al finalizar el evento.</span>
@@ -712,7 +712,7 @@ const EventosRegistrados = () => {
                     <select
                       id="motivo"
                       name="motivo"
-                      className="shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      className="shadow-sm focus:ring-[#3d3dea] focus:border-[#3d3dea] block w-full sm:text-sm border-gray-300 rounded-md"
                     >
                       <option value="">Selecciona un motivo</option>
                       <option value="horario">Conflicto de horario</option>
@@ -729,7 +729,7 @@ const EventosRegistrados = () => {
                       id="comentarios"
                       name="comentarios"
                       rows="3"
-                      className="shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      className="shadow-sm focus:ring-[#3d3dea] focus:border-[#3d3dea] block w-full sm:text-sm border-gray-300 rounded-md"
                       placeholder="Si deseas, puedes proporcionar más detalles sobre tu cancelación."
                     ></textarea>
                   </div>
@@ -739,7 +739,7 @@ const EventosRegistrados = () => {
               <div className="flex justify-end space-x-4">
                 <button 
                   onClick={() => setShowCancelModal(false)}
-                  className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                 >
                   Volver
                 </button>
