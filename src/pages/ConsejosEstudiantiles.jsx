@@ -91,7 +91,7 @@ const ConsejosEstudiantiles = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <div className="bg-green-700 text-white py-10">
+      <div className="bg-[#3d3dea] text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-2">Consejos Estudiantiles</h1>
           <p className="opacity-90">
@@ -108,7 +108,7 @@ const ConsejosEstudiantiles = () => {
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-700">{consejos.length}</div>
+                <div className="text-3xl font-bold text-[#3d3dea]">{consejos.length}</div>
                 <div className="text-gray-600">Consejos compartidos</div>
               </div>
               <div className="text-center">
@@ -135,7 +135,7 @@ const ConsejosEstudiantiles = () => {
                   <input 
                     type="text" 
                     placeholder="Buscar por título, contenido o tags..." 
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -148,7 +148,7 @@ const ConsejosEstudiantiles = () => {
               <div className="md:w-1/2 md:text-right">
                 <button 
                   onClick={() => setShowAddModal(true)}
-                  className="inline-block bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                  className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
                 >
                   Compartir mi consejo
                 </button>
@@ -160,7 +160,7 @@ const ConsejosEstudiantiles = () => {
                 <label htmlFor="programa" className="block text-sm font-medium text-gray-700 mb-1">Programa</label>
                 <select 
                   id="programa" 
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={selectedPrograma}
                   onChange={(e) => setSelectedPrograma(e.target.value)}
                 >
@@ -175,7 +175,7 @@ const ConsejosEstudiantiles = () => {
                 <label htmlFor="sortBy" className="block text-sm font-medium text-gray-700 mb-1">Ordenar por</label>
                 <select 
                   id="sortBy" 
-                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md"
+                  className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
@@ -211,7 +211,7 @@ const ConsejosEstudiantiles = () => {
                     onClick={() => setActiveTab(categoria.id)} 
                     className={`py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap flex items-center gap-2 ${
                       activeTab === categoria.id 
-                        ? 'border-green-700 text-green-700' 
+                        ? 'border-[#3d3dea] text-[#3d3dea]' 
                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                     }`}
                   >
@@ -236,7 +236,7 @@ const ConsejosEstudiantiles = () => {
                               <div className="flex items-center gap-3 mb-2">
                                 <h3 className="text-xl font-semibold text-gray-800">{consejo.titulo}</h3>
                                 {consejo.verificado && (
-                                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-[#3d3dea]/10 text-[#3d3dea]">
                                     <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                     </svg>
@@ -288,7 +288,7 @@ const ConsejosEstudiantiles = () => {
                           
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-4">
-                              <button className="flex items-center space-x-1 text-gray-500 hover:text-green-700 transition-colors">
+                              <button className="flex items-center space-x-1 text-gray-500 hover:text-[#3d3dea] transition-colors">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                 </svg>
@@ -324,7 +324,7 @@ const ConsejosEstudiantiles = () => {
                   <div className="mt-6">
                     <button 
                       onClick={() => setShowAddModal(true)}
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                     >
                       Sé el primero en compartir
                     </button>
@@ -343,7 +343,7 @@ const ConsejosEstudiantiles = () => {
               </p>
               <button 
                 onClick={() => setShowAddModal(true)}
-                className="bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+                className="bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-6 rounded-lg transition duration-300"
               >
                 Compartir mi consejo
               </button>
@@ -356,9 +356,9 @@ const ConsejosEstudiantiles = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link 
                 to="/eventos-disponibles"
-                className="bg-green-100 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
+                className="bg-[#3d3dea]/10 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
               >
-                <svg className="w-8 h-8 text-green-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#3d3dea] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <h4 className="font-semibold text-center">Eventos</h4>
@@ -432,7 +432,7 @@ const ConsejosEstudiantiles = () => {
                       required
                       value={nuevoConsejo.titulo}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       placeholder="Ej: Cómo organizar mejor tu tiempo de estudio"
                     />
                   </div>
@@ -448,7 +448,7 @@ const ConsejosEstudiantiles = () => {
                       rows="4"
                       value={nuevoConsejo.contenido}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       placeholder="Comparte tu experiencia y consejos detallados..."
                     />
                   </div>
@@ -465,7 +465,7 @@ const ConsejosEstudiantiles = () => {
                         required
                         value={nuevoConsejo.autor}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                         placeholder="Tu nombre completo"
                       />
                     </div>
@@ -480,7 +480,7 @@ const ConsejosEstudiantiles = () => {
                         required
                         value={nuevoConsejo.programa}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       >
                         <option value="">Selecciona tu programa</option>
                         {programasAcademicos.map((programa, idx) => (
@@ -501,7 +501,7 @@ const ConsejosEstudiantiles = () => {
                         required
                         value={nuevoConsejo.semestre}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       >
                         <option value="">Selecciona tu semestre</option>
                         {[...Array(10)].map((_, i) => (
@@ -520,7 +520,7 @@ const ConsejosEstudiantiles = () => {
                         required
                         value={nuevoConsejo.categoria}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       >
                         {categorias.slice(1).map((categoria) => (
                           <option key={categoria.id} value={categoria.id}>
@@ -541,7 +541,7 @@ const ConsejosEstudiantiles = () => {
                       name="tags"
                       value={nuevoConsejo.tags}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea]"
                       placeholder="productividad, organización, tiempo"
                     />
                     <p className="text-xs text-gray-500 mt-1">
@@ -554,13 +554,13 @@ const ConsejosEstudiantiles = () => {
                   <button 
                     type="button"
                     onClick={() => setShowAddModal(false)}
-                    className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                    className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                   >
                     Cancelar
                   </button>
                   <button 
                     type="submit"
-                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]"
                   >
                     Compartir consejo
                   </button>
