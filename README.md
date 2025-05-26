@@ -1,70 +1,319 @@
-# Getting Started with Create React App
+# Portal Estudiantil UNAB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portal web moderno para estudiantes de la Universidad Autónoma de Bucaramanga (UNAB) que permite gestionar horas libres, eventos académicos, cursos y información personal de manera integrada.
 
-## Available Scripts
+## 🚀 Características Principales
 
-In the project directory, you can run:
+### 📊 Dashboard Personalizado
+- **Resumen académico** con progreso de horas libres
+- **Visualización de cursos** y calificaciones actuales
+- **Eventos registrados** y próximos
+- **Anuncios** y noticias universitarias
 
-### `npm start`
+### 👤 Gestión de Perfil
+- **Información personal** editable
+- **Datos académicos** (semestre, programa, promedio)
+- **Contactos de emergencia**
+- **Configuración de cuenta**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📅 Sistema de Eventos
+- **Exploración de eventos** con filtros por categoría
+- **Registro automático** en eventos universitarios
+- **Gestión de eventos registrados**
+- **Seguimiento de horas libres** otorgadas por eventos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ⏰ Seguimiento de Horas Libres
+- **Progreso visual** con barras interactivas
+- **Cálculo automático** de horas restantes
+- **Historial detallado** de actividades registradas
 
-### `npm test`
+### 📚 Gestión Académica
+- **Visualización de cursos** y calificaciones
+- **Horario semanal** con opción de impresión
+- **Seguimiento del rendimiento académico**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Stack Tecnológico
 
-### `npm run build`
+### Frontend
+- **React 19.1.0** - Biblioteca de interfaz de usuario
+- **React Router 7.5.3** - Enrutamiento del lado del cliente y servidor
+- **TypeScript 5.8.3** - Tipado estático
+- **Tailwind CSS 4.1.6** - Framework de CSS utilitario
+- **Headless UI 2.2.2** - Componentes accesibles sin estilos
+- **Heroicons 2.2.0** - Iconos SVG
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Herramientas de Desarrollo
+- **Vite 6.3.3** - Bundler y servidor de desarrollo
+- **ESLint & Prettier** - Linting y formateo de código
+- **Docker** - Contenedorización
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Arquitectura
+- **SSR (Server-Side Rendering)** habilitado por defecto
+- **Rutas protegidas** con sistema de autenticación
+- **Responsive Design** para móvil y desktop
+- **PWA-ready** con manifest y service workers
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏗️ Estructura del Proyecto
 
-### `npm run eject`
+```
+app/
+├── components/          # Componentes reutilizables
+│   ├── Card.tsx        # Componente de tarjeta
+│   ├── Footer.tsx      # Pie de página
+│   ├── Header.tsx      # Encabezado
+│   ├── Modal.tsx       # Ventanas modales
+│   ├── Navigation.tsx  # Navegación principal
+│   ├── ProgressBar.tsx # Barra de progreso
+│   ├── Toast.tsx       # Notificaciones
+│   └── ...
+├── context/            # Contextos de React
+│   └── AuthContext.tsx # Contexto de autenticación
+├── data/              # Datos estáticos
+│   └── user.json      # Datos de usuario mock
+├── layouts/           # Layouts de página
+│   ├── AuthLayout.tsx # Layout de autenticación
+│   ├── MainLayout.tsx # Layout principal
+│   └── PublicLayout.tsx
+├── pages/             # Páginas de la aplicación
+│   ├── Dashboard.tsx  # Panel principal
+│   ├── Events.tsx     # Eventos disponibles
+│   ├── Profile.tsx    # Perfil de usuario
+│   └── ...
+├── routes/            # Definición de rutas
+│   ├── protected/     # Rutas protegidas
+│   └── public/        # Rutas públicas
+├── services/          # Servicios de datos
+│   ├── authService.ts # Servicio de autenticación
+│   └── eventService.ts# Servicio de eventos
+└── app.css           # Estilos globales
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Instalación y Configuración
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerrequisitos
+- Node.js 20+ (recomendado usar la versión LTS)
+- npm o yarn
+- Docker (opcional para contenedorización)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Instalación Local
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clonar el repositorio**
+```bash
+git clone <repository-url>
+cd unab-student-portal
+```
 
-## Learn More
+2. **Instalar dependencias**
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Configurar variables de entorno**
+```bash
+cp .env.example .env
+# Editar .env con las configuraciones necesarias
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Iniciar servidor de desarrollo**
+```bash
+npm run dev
+```
 
-### Code Splitting
+La aplicación estará disponible en `http://localhost:5173`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Construcción para Producción
 
-### Analyzing the Bundle Size
+```bash
+# Generar build de producción
+npm run build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Iniciar servidor de producción
+npm run start
+```
 
-### Making a Progressive Web App
+### Despliegue con Docker
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+# Construir imagen
+docker build -t unab-portal .
 
-### Advanced Configuration
+# Ejecutar contenedor
+docker run -p 3000:3000 unab-portal
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🔐 Sistema de Autenticación
 
-### Deployment
+### Credenciales de Prueba
+- **Usuario:** `student3`
+- **Contraseña:** `unab123`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Funcionamiento
+- **Autenticación basada en sesión** con sessionStorage
+- **Rutas protegidas** que requieren autenticación
+- **Redirección automática** después del login
+- **Contexto global** para gestión del estado de autenticación
 
-### `npm run build` fails to minify
+## 🎨 Personalización de Estilos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Colores UNAB
+```css
+:root {
+  --unab-blue: #003b71;    /* Azul institucional */
+  --unab-yellow: #ffd200;  /* Amarillo institucional */
+  --unab-gold: #d4a017;    /* Dorado */
+  --unab-gray: #58595b;    /* Gris */
+}
+```
+
+### Configuración de Tailwind
+El proyecto utiliza Tailwind CSS 4.x con configuración personalizada en `tailwind.config.js`:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      "unab-blue": "#003b71",
+      "unab-yellow": "#ffd200",
+      // ...
+    }
+  }
+}
+```
+
+## 📱 Responsive Design
+
+### Breakpoints
+- **Mobile:** < 768px
+- **Tablet:** 768px - 1024px  
+- **Desktop:** > 1024px
+
+### Características Mobile
+- **Navegación inferior** en dispositivos móviles
+- **Menú hamburguesa** para navegación lateral
+- **Optimización táctil** para mejor experiencia
+- **Layouts adaptivos** según el tamaño de pantalla
+
+## 🧪 Testing
+
+```bash
+# Ejecutar tests unitarios
+npm run test
+
+# Ejecutar tests con cobertura
+npm run test:coverage
+
+# Ejecutar tests de integración
+npm run test:integration
+```
+
+## 🔧 Scripts Disponibles
+
+```bash
+npm run dev          # Servidor de desarrollo
+npm run build        # Build de producción
+npm run start        # Servidor de producción
+npm run typecheck    # Verificación de tipos TypeScript
+npm run lint         # Linting del código
+npm run format       # Formateo del código
+```
+
+## 🌐 Configuración de Rutas
+
+### Rutas Públicas
+- `/` - Landing page
+- `/login` - Página de autenticación
+
+### Rutas Protegidas
+- `/dashboard` - Panel principal (requiere autenticación)
+- `/profile` - Perfil de usuario
+- `/events` - Eventos disponibles
+- `/my-events` - Mis eventos registrados
+- `/hours` - Horas libres
+- `/courses` - Cursos y calificaciones
+- `/schedule` - Horario semanal
+
+## 🔒 Seguridad
+
+### Medidas Implementadas
+- **Rutas protegidas** con verificación de autenticación
+- **Validación de formularios** en cliente y servidor
+- **Sanitización de datos** de entrada
+- **Headers de seguridad** configurados
+- **HTTPS** recomendado en producción
+
+### Recomendaciones de Producción
+- Implementar autenticación JWT real
+- Configurar CORS apropiadamente
+- Usar variables de entorno para secretos
+- Implementar rate limiting
+- Configurar CSP (Content Security Policy)
+
+## 🚀 Despliegue
+
+### Plataformas Recomendadas
+- **Vercel** (recomendado para SSR)
+- **Netlify** 
+- **Railway**
+- **Render**
+- **AWS ECS** (con Docker)
+- **Google Cloud Run**
+
+### Variables de Entorno de Producción
+```bash
+NODE_ENV=production
+API_URL=https://api.unab.edu.co
+JWT_SECRET=your-jwt-secret
+DATABASE_URL=your-database-url
+```
+
+## 🤝 Contribución
+
+### Proceso de Desarrollo
+1. Fork del repositorio
+2. Crear rama feature: `git checkout -b feature/nueva-funcionalidad`
+3. Commit cambios: `git commit -m 'Add: nueva funcionalidad'`
+4. Push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Crear Pull Request
+
+### Estándares de Código
+- **TypeScript** para tipado estático
+- **ESLint** y **Prettier** para consistencia
+- **Convenciones de nomenclatura** camelCase para variables, PascalCase para componentes
+- **Comentarios JSDoc** para funciones públicas
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 👥 Equipo de Desarrollo
+
+**Universidad Autónoma de Bucaramanga (UNAB)**
+- Facultad de Ingeniería
+- Programa de Ingeniería de Sistemas
+
+## 📞 Soporte
+
+Para soporte técnico o consultas:
+- **Email:** soporte.ti@unab.edu.co
+- **Teléfono:** +57 (7) 643 6111
+- **Dirección:** Av. 42 No. 48-11, Bucaramanga, Santander
+
+## 🔄 Versiones
+
+### v1.0.0 (Actual)
+- ✅ Sistema de autenticación básico
+- ✅ Gestión de horas libres
+- ✅ Registro de eventos
+- ✅ Perfil de usuario
+- ✅ Dashboard interactivo
+- ✅ Responsive design
+
+### Próximas Versiones
+- 🔄 v1.1.0 - Integración con API real
+- 🔄 v1.2.0 - Notificaciones push
+- 🔄 v1.3.0 - Calendario académico
+- 🔄 v2.0.0 - Sistema de calificaciones en tiempo real
+
+---
+
+*Desarrollado con ❤️ para la comunidad estudiantil de la UNAB*
