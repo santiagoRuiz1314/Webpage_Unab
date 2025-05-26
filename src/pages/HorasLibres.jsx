@@ -151,8 +151,8 @@ const HorasLibres = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Versión reducida para la página de horas libres */}
-      <div className="bg-green-700 text-white py-10">
+      {/* Hero Section - Actualizado con el nuevo color */}
+      <div className="bg-[#3d3dea] text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-2">Horas Libres</h1>
           <p className="opacity-90">
@@ -181,7 +181,7 @@ const HorasLibres = () => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                     <div 
-                      className="bg-green-600 h-2.5 rounded-full" 
+                      className="bg-[#3d3dea] h-2.5 rounded-full" 
                       style={{ width: `${porcentajeCompletado}%` }}
                     ></div>
                   </div>
@@ -209,10 +209,10 @@ const HorasLibres = () => {
               </div>
               
               <div className="md:w-1/4 mt-6 md:mt-0">
-                <div className="bg-green-50 rounded-lg p-6 h-full">
+                <div className="bg-[#3d3dea]/10 rounded-lg p-6 h-full">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="h-24 w-24 rounded-full bg-green-100 flex items-center justify-center">
-                      <span className="text-3xl font-bold text-green-700">{horasLibres}</span>
+                    <div className="h-24 w-24 rounded-full bg-[#3d3dea]/20 flex items-center justify-center">
+                      <span className="text-3xl font-bold text-[#3d3dea]">{horasLibres}</span>
                     </div>
                   </div>
                   <div className="text-center">
@@ -220,7 +220,7 @@ const HorasLibres = () => {
                     <p className="text-sm text-gray-600 mb-3">De {horasRequeridas} horas requeridas</p>
                     <Link 
                       to="/eventos-disponibles"
-                      className="inline-block bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded transition duration-300 w-full"
+                      className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white text-sm font-medium py-2 px-4 rounded transition duration-300 w-full"
                     >
                       Inscribirme a Eventos
                     </Link>
@@ -238,7 +238,7 @@ const HorasLibres = () => {
                   onClick={() => setActiveTab('resumen')} 
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'resumen' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -248,7 +248,7 @@ const HorasLibres = () => {
                   onClick={() => setActiveTab('historial')}
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'historial' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -258,7 +258,7 @@ const HorasLibres = () => {
                   onClick={() => setActiveTab('normativas')}
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'normativas' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -268,7 +268,7 @@ const HorasLibres = () => {
                   onClick={() => setActiveTab('certificados')}
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'certificados' 
-                      ? 'border-green-700 text-green-700' 
+                      ? 'border-[#3d3dea] text-[#3d3dea]' 
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -287,7 +287,7 @@ const HorasLibres = () => {
                       <h3 className="text-lg font-semibold text-gray-800">Eventos Registrados</h3>
                       <Link 
                         to="/eventos-registrados"
-                        className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                        className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                       >
                         Ver todos
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -313,7 +313,7 @@ const HorasLibres = () => {
                               <div className="flex justify-between items-center">
                                 <Link 
                                   to={`/eventos-registrados?id=${evento.id}`}
-                                  className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                                  className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                                 >
                                   Ver detalles
                                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -338,7 +338,7 @@ const HorasLibres = () => {
                         <p className="text-gray-600 mb-4">Actualmente no tienes eventos registrados. Explora los eventos disponibles y regístrate.</p>
                         <Link 
                           to="/eventos-disponibles" 
-                          className="inline-block bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition duration-300"
+                          className="inline-block bg-[#3d3dea] hover:bg-[#2d2dd4] text-white font-medium py-2 px-4 rounded transition duration-300"
                         >
                           Ver Eventos Disponibles
                         </Link>
@@ -351,7 +351,7 @@ const HorasLibres = () => {
                       <h3 className="text-lg font-semibold text-gray-800">Próximos Eventos Recomendados</h3>
                       <Link 
                         to="/eventos-disponibles"
-                        className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                        className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                       >
                         Ver todos
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +365,7 @@ const HorasLibres = () => {
                         <div key={evento.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                           <div className="h-32 bg-gray-200 flex items-center justify-center">
                             {/* Placeholder para imágenes reales */}
-                            <div className={`w-full h-full flex items-center justify-center ${evento.id % 2 === 0 ? 'bg-blue-100' : 'bg-green-100'}`}>
+                            <div className={`w-full h-full flex items-center justify-center ${evento.id % 2 === 0 ? 'bg-blue-100' : 'bg-[#3d3dea]/10'}`}>
                               <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                               </svg>
@@ -375,7 +375,7 @@ const HorasLibres = () => {
                           <div className="p-4">
                             <div className="flex justify-between items-start mb-2">
                               <h4 className="font-semibold text-gray-800">{evento.nombre}</h4>
-                              <span className="bg-green-100 text-green-800 text-xs font-medium py-1 px-2 rounded">
+                              <span className="bg-[#3d3dea]/10 text-[#3d3dea] text-xs font-medium py-1 px-2 rounded">
                                 {evento.horas} horas
                               </span>
                             </div>
@@ -402,7 +402,7 @@ const HorasLibres = () => {
                             <div className="flex justify-between items-center">
                               <Link 
                                 to={`/eventos-disponibles?id=${evento.id}`}
-                                className="text-green-700 hover:text-green-800 text-sm font-medium inline-flex items-center"
+                                className="text-[#3d3dea] hover:text-[#2d2dd4] text-sm font-medium inline-flex items-center"
                               >
                                 Más información
                                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -412,7 +412,7 @@ const HorasLibres = () => {
                               
                               <Link 
                                 to={`/eventos-disponibles?id=${evento.id}&register=true`}
-                                className="text-white bg-green-700 hover:bg-green-800 text-sm font-medium py-1 px-3 rounded transition duration-300"
+                                className="text-white bg-[#3d3dea] hover:bg-[#2d2dd4] text-sm font-medium py-1 px-3 rounded transition duration-300"
                               >
                                 Inscribirme
                               </Link>
@@ -471,7 +471,7 @@ const HorasLibres = () => {
                                 </span>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <Link to={`/eventos-registrados?id=${evento.id}`} className="text-green-700 hover:text-green-900 mr-3">Ver</Link>
+                                <Link to={`/eventos-registrados?id=${evento.id}`} className="text-[#3d3dea] hover:text-[#2d2dd4] mr-3">Ver</Link>
                                 <button className="text-gray-600 hover:text-gray-900">Descargar</button>
                               </td>
                             </tr>
@@ -485,7 +485,7 @@ const HorasLibres = () => {
                   <div className="flex flex-col md:flex-row gap-4 bg-gray-50 p-4 rounded-lg">
                     <div className="md:w-1/4">
                       <label htmlFor="fechaHasta" className="block text-sm font-medium text-gray-700 mb-1">Hasta</label>
-                      <input type="date" id="fechaHasta" name="fechaHasta" className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md" />
+                      <input type="date" id="fechaHasta" name="fechaHasta" className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm rounded-md" />
                     </div>
                   </div>
                 </div>
@@ -518,7 +518,7 @@ const HorasLibres = () => {
                       <ul className="space-y-2 text-sm text-gray-600 mb-6">
                         {requisitos.map((requisito, index) => (
                           <li key={index} className="flex items-start">
-                            <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="h-5 w-5 text-[#3d3dea] mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             <span>{requisito}</span>
@@ -603,13 +603,13 @@ const HorasLibres = () => {
                         <div className="space-y-6">
                           <div>
                             <label htmlFor="actividad" className="block text-sm font-medium text-gray-700">Nombre de la Actividad</label>
-                            <input type="text" name="actividad" id="actividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Ej: Taller de Liderazgo" />
+                            <input type="text" name="actividad" id="actividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm" placeholder="Ej: Taller de Liderazgo" />
                           </div>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                               <label htmlFor="tipoActividad" className="block text-sm font-medium text-gray-700">Tipo de Actividad</label>
-                              <select id="tipoActividad" name="tipoActividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                              <select id="tipoActividad" name="tipoActividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm">
                                 <option value="">Selecciona un tipo</option>
                                 <option value="Evento">Evento</option>
                                 <option value="Voluntariado">Voluntariado</option>
@@ -620,7 +620,7 @@ const HorasLibres = () => {
                             
                             <div>
                               <label htmlFor="categoria" className="block text-sm font-medium text-gray-700">Categoría</label>
-                              <select id="categoria" name="categoria" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                              <select id="categoria" name="categoria" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm">
                                 <option value="">Selecciona una categoría</option>
                                 <option value="Académicas">Académicas</option>
                                 <option value="Culturales">Culturales</option>
@@ -633,18 +633,18 @@ const HorasLibres = () => {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                               <label htmlFor="fechaActividad" className="block text-sm font-medium text-gray-700">Fecha de la Actividad</label>
-                              <input type="date" name="fechaActividad" id="fechaActividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" />
+                              <input type="date" name="fechaActividad" id="fechaActividad" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm" />
                             </div>
                             
                             <div>
                               <label htmlFor="horasAcumuladas" className="block text-sm font-medium text-gray-700">Horas Acumuladas</label>
-                              <input type="number" name="horasAcumuladas" id="horasAcumuladas" min="1" max="20" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Ej: 8" />
+                              <input type="number" name="horasAcumuladas" id="horasAcumuladas" min="1" max="20" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm" placeholder="Ej: 8" />
                             </div>
                           </div>
                           
                           <div>
                             <label htmlFor="descripcion" className="block text-sm font-medium text-gray-700">Descripción de la Actividad</label>
-                            <textarea id="descripcion" name="descripcion" rows="3" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Describe brevemente la actividad realizada"></textarea>
+                            <textarea id="descripcion" name="descripcion" rows="3" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#3d3dea] focus:border-[#3d3dea] sm:text-sm" placeholder="Describe brevemente la actividad realizada"></textarea>
                           </div>
                           
                           <div>
@@ -655,7 +655,7 @@ const HorasLibres = () => {
                                   <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                                 <div className="flex text-sm text-gray-600">
-                                  <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
+                                  <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-[#3d3dea] hover:text-[#2d2dd4] focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#3d3dea]">
                                     <span>Subir un archivo</span>
                                     <input id="file-upload" name="file-upload" type="file" className="sr-only" />
                                   </label>
@@ -668,10 +668,10 @@ const HorasLibres = () => {
                         </div>
                         
                         <div className="mt-6 flex justify-end">
-                          <button type="button" className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 mr-3">
+                          <button type="button" className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea] mr-3">
                             Cancelar
                           </button>
-                          <button type="submit" className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                          <button type="submit" className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#3d3dea] hover:bg-[#2d2dd4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3d3dea]">
                             Enviar para Validación
                           </button>
                         </div>
@@ -718,9 +718,9 @@ const HorasLibres = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link 
                 to="/eventos-disponibles"
-                className="bg-green-100 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
+                className="bg-[#3d3dea]/10 rounded-lg p-4 flex flex-col items-center justify-center h-full transition-transform hover:scale-105"
               >
-                <svg className="w-8 h-8 text-green-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-8 h-8 text-[#3d3dea] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <h4 className="font-semibold text-center">Ver Eventos</h4>
@@ -771,4 +771,4 @@ const HorasLibres = () => {
   );
 };
 
-export default HorasLibres
+export default HorasLibres;
